@@ -1,0 +1,32 @@
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.intro {
+  text-align: center;
+  white-space: nowrap; /* Assicura che il testo non venga spezzato */
+  overflow: hidden; /* Nasconde l'overflow del testo animato */
+}
+
+.intro span {
+  position: relative; /* Assicura che l'overflow nascosto non causi problemi */
+  display: inline-block;
+  color: white; /* Colore iniziale del testo bianco */
+  animation: changeColor 3s linear infinite; /* Animazione di cambio colore */
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 3.5rem;
+}
+
+@keyframes changeColor {
+  0%, 25% {
+    color: white; /* Testo bianco per il 25% del tempo */
+  }
+  50%, 75% {
+    color: #feddbd; /* Cambio di colore desiderato per il 25% del tempo */
+  }
+  100% {
+    color: white; /* Testo bianco per il restante 50% del tempo */
+  }
+}

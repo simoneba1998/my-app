@@ -1,0 +1,18 @@
+.blogger-image {
+  width: 150px; /* Imposta la larghezza dell'immagine */
+  height: 150px; /* Imposta l'altezza dell'immagine */
+}
+
+/* Stili aggiuntivi per il contenitore o altri elementi */
+.container {
+  max-width: 600px; /* Larghezza massima del contenitore */
+  margin: auto; /* Centrare il contenuto */
+}
+
+.text-title{
+  color:#9bb7d5;
+}
+
+.text-description{
+  color: whitesmoke;
+}
