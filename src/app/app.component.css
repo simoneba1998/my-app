@@ -1,58 +1,57 @@
+/* Reset CSS */
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-html {
+/* General styles */
+html, body {
   height: 100%;
-  background-color: #333;
+  background-color: #333; /* Colore di sfondo generale */
+  font-size: 1.5rem;
 }
 
 .grid {
   display: grid;
-  height: 100%;
-  grid-template-rows: 6rem 5rem auto 5rem;
-  grid-template-columns: 100%;
-  font-size: 1.5rem;
-}
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-rows: 6rem 6rem 6rem auto 6rem 6rem;
-    grid-template-columns: 1fr;
-  }
-  aside,
-  main {
-    grid-column: 1 / 4;
-  }
+  grid-template-rows: 6rem auto; /* Altezza della navbar e del main */
+  min-height: 100vh; /* Altezza minima per coprire l'intero viewport */
 }
 
 nav {
-  grid-column: 1 / 4;
+  grid-row: 1 / 2; /* Posiziona la navbar nella prima riga */
+  background-color: #000000; /* Colore di sfondo della navbar */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #333; */
 }
 
-main {
+main.content {
+  grid-row: 2 / 3; /* Posiziona il main nella seconda riga */
+  position: relative; /* Posizionamento relativo per contenuti sovrapposti */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Posizione relativa per consentire il posizionamento assoluto di .background */
+  overflow: hidden; /* Nasconde il contenuto oltre i limiti del main */
 }
 
-.background {
+.main-background {
   background-image: url("../assets/image/earth-2.jpg");
-  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* filter: blur(1px);  */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   z-index: -1;
+}
+
+/* Media query per schermi di dimensioni ridotte */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-rows: 6rem auto; /* Modifica altezza righe per schermi piccoli */
+    grid-template-columns: 1fr; /* Una colonna per schermi piccoli */
+  }
 }

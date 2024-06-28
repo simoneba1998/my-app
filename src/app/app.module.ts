@@ -16,7 +16,7 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
