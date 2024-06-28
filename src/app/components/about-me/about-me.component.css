@@ -8,7 +8,7 @@
 
 /* Stili aggiuntivi per il contenitore o altri elementi */
 .container {
-  max-width: 600px; /* Larghezza massima del contenitore */
+  max-width: 1100px;/* Larghezza massima del contenitore */
   margin: auto; /* Centrare il contenuto */
 }
 
