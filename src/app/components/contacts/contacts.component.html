@@ -1,0 +1,30 @@
+<form class="my-form" [formGroup]="myForm">
+  <h2 class="text-center"> Contact Me</h2>
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="nome">
+    <mat-error *ngIf="myForm.get('nome')?.invalid && (myForm.get('nome')?.dirty || myForm.get('nome')?.touched)">
+      Il nome è obbligatorio
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Your Email</mat-label>
+    <input matInput formControlName="email">
+    <mat-error *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
+      Inserisci un'email valida
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="descrizione" rows="5"></textarea>
+    <mat-error *ngIf="myForm.get('descrizione')?.invalid && (myForm.get('descrizione')?.dirty || myForm.get('descrizione')?.touched)">
+      La descrizione è obbligatoria
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" class="submit-button">
+    Submit
+  </button>
+</form>

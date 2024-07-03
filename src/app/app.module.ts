@@ -7,6 +7,12 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input'; // Importa il modulo per gli input
+import { MatButtonModule } from '@angular/material/button'; // Importa il modulo per i pulsanti
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -14,11 +20,17 @@ import { TechnologiesComponent } from './components/technologies/technologies.co
     NavbarComponent,
     HomeComponent,
     AboutMeComponent,
-    TechnologiesComponent
+    TechnologiesComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule, 
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

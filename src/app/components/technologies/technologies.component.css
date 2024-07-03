@@ -3,7 +3,7 @@ img {
   height: 160px;
   padding: 10px;
   opacity: 0; /* Start hidden for animation */
-  transform: translateY(-150px); /* Start position above the view */
+  transform: translateY(250px); /* Start position above the view */
   transition: transform 0.5s ease, opacity 1s ease; /* Transition for hover effect */
 }
 
