@@ -1,0 +1,36 @@
+img {
+  width: 160px;
+  height: 160px;
+  padding: 10px;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateY(-100px); /* Start position above the view */
+  transition: transform 0.5s ease, opacity 1s ease; /* Transition for hover effect */
+}
+
+/* Drop animation */
+.drop-animation {
+  animation: drop 2s forwards;
+}
+
+/* Cascading delays */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.6s; }
+.delay-5 { animation-delay: 0.7s; }
+.delay-6 { animation-delay: 0.8s; }
+.delay-7 { animation-delay: 0.9s; }
+.delay-8 { animation-delay: 1.0s; }
+
+/* Keyframes for drop animation */
+@keyframes drop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect for rotation */
+img:hover {
+  transform: rotateX(360deg); /* Rotate 360 degrees on the X-axis */
+}
