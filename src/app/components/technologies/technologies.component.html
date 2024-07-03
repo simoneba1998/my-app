@@ -2,7 +2,7 @@
   <div class="row flex-wrap justify-content-center p-4">
     <div *ngFor="let logo of logos; let i = index" [ngClass]="{'text-center': true, 'mb-4': true, 'col-12': true, 'col-sm-6': true, 'col-md-4': true, 'col-lg-3': true}">
       <div class="logo-container">
-        <img [src]="logo.src" [alt]="logo.alt" class="img-fluid drop-animation" [ngClass]="'delay-' + (i + 1)" data-bs-toggle="tooltip" [attr.title]="logo.alt">
+        <img [src]="logo.src" [alt]="logo.alt" class="img-fluid drop-animation" [ngClass]="'delay-' + (i + 1)" data-bs-toggle="tooltip" [attr.title]="logo.alt" >
       </div>
     </div>
   </div>
