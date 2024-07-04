@@ -1,36 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import emailjs from '@emailjs/browser';
+import { ContactInfo } from 'src/app/Model/EmailModel';
+import { EmailJsService } from 'src/app/Service/email-js.service';
 
 @Component({
   selector: 'app-contacts',
-  templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css']
+  templateUrl: './Contacts.component.html',
+  styleUrls: ['./Contacts.component.css'],
 })
 export class ContactsComponent implements OnInit {
-
-  myForm:FormGroup = this.fb.group({
-    nome: ['', Validators.required],
+  myForm: FormGroup = this.fb.group({
+    name: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    descrizione: ['', Validators.required]
+    message: ['', Validators.required],
   });
 
-  constructor(
-    private fb: FormBuilder
-  ) { }
+  constructor(private fb: FormBuilder,
+    private emailJsService: EmailJsService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   submitForm() {
     if (this.myForm.valid) {
-      // Implementazione dell'invio dei dati, ad esempio a un servizio backend
-      console.log(this.myForm.value);
-      // Reset del form dopo l'invio dei dati (opzionale)
-      this.myForm.reset();
+      const formData: ContactInfo = this.myForm.value;
+      this.emailJsService.emailSend(formData);
+      this.myForm.reset({
+        name: '',
+        email: '',
+        message: '',
+      });
     } else {
-      // Validazione degli errori, se necessario
       console.log('Form non valido');
     }
   }
-
 }

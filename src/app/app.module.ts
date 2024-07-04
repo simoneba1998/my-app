@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutMeComponent } from './components/about-me/about-me.component';
-import { TechnologiesComponent } from './components/technologies/technologies.component';
-import { ContactsComponent } from './components/contacts/contacts.component';
+import { HomeComponent } from './Components/Home/home.component';
+import { AboutMeComponent } from './Components/AboutMe/AboutMe.component';
+import { TechnologiesComponent } from './Components/Technologies/Technologies.component';
+import { ContactsComponent } from './Components/Contacts/Contacts.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input'; // Importa il modulo per gli input
 import { MatButtonModule } from '@angular/material/button'; // Importa il modulo per i pulsanti
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NavbarComponent } from './Layout/Navbar/Navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatInputModule, 
+    MatInputModule,
     MatButtonModule,
     MatFormFieldModule
   ],

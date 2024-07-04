@@ -1,26 +1,41 @@
-<form class="my-form" [formGroup]="myForm">
-  <h2 class="text-center"> Contact Me</h2>
+<form class="my-form" [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <h2 class="text-center">Contact Me</h2>
   <mat-form-field class="example-full-width">
     <mat-label>Name</mat-label>
-    <input matInput formControlName="nome">
-    <mat-error *ngIf="myForm.get('nome')?.invalid && (myForm.get('nome')?.dirty || myForm.get('nome')?.touched)">
-      Il nome è obbligatorio
+    <input matInput formControlName="name" />
+    <mat-error
+      *ngIf="
+        myForm.get('name')?.invalid &&
+        (myForm.get('name')?.dirty || myForm.get('name')?.touched)
+      "
+    >
+      The name is required
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Your Email</mat-label>
-    <input matInput formControlName="email">
-    <mat-error *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
-      Inserisci un'email valida
+    <input matInput formControlName="email" matAutocomplete="false" />
+    <mat-error
+      *ngIf="
+        myForm.get('email')?.invalid &&
+        (myForm.get('email')?.dirty || myForm.get('email')?.touched)
+      "
+    >
+      Please enter a valid email
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <mat-label>Description</mat-label>
-    <textarea matInput formControlName="descrizione" rows="5"></textarea>
-    <mat-error *ngIf="myForm.get('descrizione')?.invalid && (myForm.get('descrizione')?.dirty || myForm.get('descrizione')?.touched)">
-      La descrizione è obbligatoria
+    <mat-label>Message</mat-label>
+    <textarea matInput formControlName="message" rows="5"></textarea>
+    <mat-error
+      *ngIf="
+        myForm.get('message')?.invalid &&
+        (myForm.get('message')?.dirty || myForm.get('message')?.touched)
+      "
+    >
+      The description is required
     </mat-error>
   </mat-form-field>
 

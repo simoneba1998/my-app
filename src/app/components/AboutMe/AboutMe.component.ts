@@ -2,9 +2,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-about-me',
-  templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.css'],
+  selector: 'app-About-Me',
+  templateUrl: './AboutMe.component.html',
+  styleUrls: ['./AboutMe.component.css'],
   animations: [
     trigger('rotateIn', [
       transition(':enter', [

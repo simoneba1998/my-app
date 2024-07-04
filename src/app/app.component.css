@@ -31,9 +31,10 @@ main.content {
   position: relative; /* Posizionamento relativo per contenuti sovrapposti */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  padding-top: 1rem;
   overflow: hidden; /* Nasconde il contenuto oltre i limiti del main */
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 
 .main-background {

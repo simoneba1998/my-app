@@ -6,7 +6,8 @@ mat-label{
   max-width: 500px;
   padding: 20px;
   box-sizing: border-box;
-  padding-bottom: 23rem;
+  /* padding-bottom: 18rem; */
+  animation: bounceInRight 2s;
 }
 
 .example-full-width {
@@ -16,7 +17,7 @@ mat-label{
 
 /* Stile per gli input matInput */
 .mat-input-element {
-  background-color: #555454; /* Colore di sfondo più scuro per gli input */
+  background-color: #555454 !important; /* Colore di sfondo più scuro per gli input */
   color: #ffffff; /* Cambia il colore del testo in bianco */
   border-radius: 4px;
   border: 1px solid #555; /* Bordo leggermente più chiaro */
@@ -47,3 +48,32 @@ h2{
   background-color: #0056b3; /* Cambia il colore di sfondo al passaggio del mouse */
 }
 
+
+/* Animation for bouncing text */
+@keyframes bounceInRight {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  0% {
+    transform: translateX(3000px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-25px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+   -webkit-box-shadow: 0 0 0 30px #555454 inset !important;
+   -webkit-text-fill-color: #ffffff !important;
+}
