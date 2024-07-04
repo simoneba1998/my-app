@@ -13,13 +13,13 @@ export class TechnologiesComponent implements OnInit {
   }
 
   logos = [
-    { src: '../../../assets/image/angular-logo.png', alt: 'Angular' },
-    { src: '../../../assets/image/react-logo.png', alt: 'React' },
-    { src: '../../../assets/image/java-logo.png', alt: 'Java' },
-    { src: '../../../assets/image/bootstrap-logo.png', alt: 'Bootstrap' },
-    { src: '../../../assets/image/material-logo.png', alt: 'Material' },
-    { src: '../../../assets/image/rxjs-logo.png', alt: 'RxJS' },
-    { src: '../../../assets/image/spring-logo.png', alt: 'Spring' },
+    { src: '../../../assets/image/angular-logo.png', alt: 'ANGULAR' },
+    { src: '../../../assets/image/react-logo.png', alt: 'REACT' },
+    { src: '../../../assets/image/java-logo.png', alt: 'JAVA' },
+    { src: '../../../assets/image/bootstrap-logo.png', alt: 'BOOTSTRAP' },
+    { src: '../../../assets/image/material-logo.png', alt: 'MATERIAL' },
+    { src: '../../../assets/image/rxjs-logo.png', alt: 'RXJS' },
+    { src: '../../../assets/image/spring-logo.png', alt: 'SPRING' },
     { src: '../../../assets/image/sql-logo.png', alt: 'SQL' },
   ];
 

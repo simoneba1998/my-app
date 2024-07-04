@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input'; // Importa il modulo p
 import { MatButtonModule } from '@angular/material/button'; // Importa il modulo per i pulsanti
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NavbarComponent } from './Layout/Navbar/Navbar.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NavbarComponent } from './Layout/Navbar/Navbar.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
