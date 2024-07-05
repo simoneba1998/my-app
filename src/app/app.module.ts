@@ -14,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button'; // Importa il modulo
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NavbarComponent } from './Layout/Navbar/Navbar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { SharedModule } from './Shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     HomeComponent,
     AboutMeComponent,
     TechnologiesComponent,
-    ContactsComponent
+    ContactsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatTooltipModule
+    MatTooltipModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
