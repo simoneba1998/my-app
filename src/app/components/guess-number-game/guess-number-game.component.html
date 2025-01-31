@@ -9,4 +9,6 @@
   <button *ngIf="!vincita" class="btn btn-primary" (click)="checkNumber()">Try</button>
   <button *ngIf="vincita" class="btn btn-secondary" (click)="restartGame()">Restart Game</button>
   <p [style.color]="coloreMessaggio">{{ messaggio }}</p>
+
+  <canvas #fireworksCanvas style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; pointer-events: none;"></canvas>
 </div>

@@ -15,3 +15,7 @@ input, button {
   height: 250px;
 }
 
+/* canvas {
+  pointer-events: none;
+  z-index: 1000;
+} */
