@@ -6,7 +6,7 @@
     <label for="guessInput" class="form-label">Enter a number</label>
     <input type="number" class="form-control" id="guessInput" placeholder="Enter a number" [formControl]="numeroInserito!">
   </div>
-  <button *ngIf="!vincita" class="btn btn-primary" (click)="checkNumber()">Try</button>
+  <button *ngIf="!vincita" class="btn btn-primary" (click)="checkNumber()">Try Your Luck</button>
   <button *ngIf="vincita" class="btn btn-secondary" (click)="restartGame()">Restart Game</button>
   <p [style.color]="coloreMessaggio">{{ messaggio }}</p>
 

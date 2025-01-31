@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Fireworks } from 'fireworks-js';
 
@@ -19,13 +25,16 @@ export class GuessNumberGameComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.numeroInserito?.valueChanges.subscribe(() => this.messaggio = ''
+    );
+  }
 
   ngAfterViewInit() {
     if (this.fireworksCanvas) {
       this.fireworks = new Fireworks(this.fireworksCanvas.nativeElement, {
         autoresize: true,
-        opacity: 0.7
+        opacity: 0.7,
       });
     }
   }
@@ -36,20 +45,19 @@ export class GuessNumberGameComponent implements OnInit, AfterViewInit {
       this.coloreMessaggio = 'orange';
       return;
     }
-
     if (this.numeroInserito?.value === this.numeroSegreto) {
       this.fireworks?.start();
       setTimeout(() => {
         this.fireworks?.stop();
       }, 5000);
-      this.messaggio = '🎉 Complimenti! Hai indovinato!';
+      this.messaggio = '🎉 Congratulations! You guessed it right!';
       this.vincita = true;
       this.coloreMessaggio = 'green';
     } else if (this.numeroInserito?.value > this.numeroSegreto) {
-      this.messaggio = '📉 Troppo alto! Riprova.';
+      this.messaggio = '📉 Too high! Try again.';
       this.coloreMessaggio = 'red';
     } else {
-      this.messaggio = '📈 Troppo basso! Riprova.';
+      this.messaggio = '📈 Too low! Try again.';
       this.coloreMessaggio = 'red';
     }
   }
