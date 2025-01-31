@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { NavbarComponent } from './Layout/Navbar/Navbar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from './Shared/shared.module';
+import { GuessNumberGameComponent } from './Components/guess-number-game/guess-number-game.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { SharedModule } from './Shared/shared.module';
     AboutMeComponent,
     TechnologiesComponent,
     ContactsComponent,
+    GuessNumberGameComponent,
   ],
   imports: [
     BrowserModule,
