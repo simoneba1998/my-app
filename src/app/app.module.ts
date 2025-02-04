@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './Components/Home/home.component';
-import { AboutMeComponent } from './Components/AboutMe/AboutMe.component';
-import { TechnologiesComponent } from './Components/Technologies/Technologies.component';
-import { ContactsComponent } from './Components/Contacts/Contacts.component';
+import { HomeComponent } from './Pages/Home/home.component';
+import { AboutMeComponent } from './Pages/AboutMe/AboutMe.component';
+import { TechnologiesComponent } from './Pages/Technologies/Technologies.component';
+import { ContactsComponent } from './Pages/Contacts/Contacts.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input'; // Importa il modulo per gli input
@@ -17,6 +17,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from './Shared/shared.module';
 import { GuessNumberGameComponent } from './Components/guess-number-game/guess-number-game.component';
 import { CardGameComponent } from './Components/card-game/card-game.component';
+import { GameComponent } from './Pages/Game/game.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CardGameComponent } from './Components/card-game/card-game.component';
     ContactsComponent,
     GuessNumberGameComponent,
     CardGameComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
