@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import Fireworks from 'fireworks-js';
 
 interface Card {
@@ -13,8 +13,8 @@ interface Card {
   templateUrl: './card-game.component.html',
   styleUrls: ['./card-game.component.css']
 })
-export class CardGameComponent implements OnInit,AfterViewInit {
-  @ViewChild('fireworksCanvas', { static: false }) fireworksCanvas?: ElementRef;
+export class CardGameComponent implements OnInit {
+  @Output() fireworks: EventEmitter<string> = new EventEmitter<string>();
   cards: Card[] = [];
   symbols: string[] = ['❤️', '🔷', '⭐', '🍀', '🎵', '🎲', '🎭', '⚽']; // Simboli delle carte
   flippedCards: Card[] = [];
@@ -22,23 +22,14 @@ export class CardGameComponent implements OnInit,AfterViewInit {
   totalPairs = this.symbols.length;
   gameWon = false;
 
-  private fireworks?: Fireworks;
 
   ngOnInit() {
     this.initializeGame();
   }
 
-  ngAfterViewInit() {
-      if (this.fireworksCanvas) {
-        this.fireworks = new Fireworks(this.fireworksCanvas.nativeElement, {
-          autoresize: true,
-          opacity: 0.7,
-        });
-      }
-    }
 
   initializeGame() {
-    this.fireworks?.stop();
+    this.fireworks.emit('stop');
     this.gameWon = false;
     this.matchedPairs = 0;
     this.cards = [];
@@ -81,10 +72,7 @@ export class CardGameComponent implements OnInit,AfterViewInit {
 
       if (this.matchedPairs === this.totalPairs) {
         this.gameWon = true;
-        this.fireworks?.start();
-        setTimeout(() => {
-          this.fireworks?.stop();
-        }, 5000);
+        this.fireworks.emit('start');
       }
     } else {
       card1.isFlipped = false;
