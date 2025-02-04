@@ -67,11 +67,37 @@ body {
   font-weight: 800;
 }
 
-@media screen and (max-width: 600px) {
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+  position: absolute !important;
+  top: 20px;
+  right: 20px;
+}
+
+@media screen and (max-width: 480px) {
   .list {
-    /* flex-direction: column; */
-    gap: 10px !important;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000; /* Porta il menu sopra gli altri elementi */
+  }
+
+  .list.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1100; /* Assicura che l'icona del menu sia sopra tutto */
   }
 }
+
