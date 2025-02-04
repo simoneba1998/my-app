@@ -1,0 +1,17 @@
+<div class="game-container">
+  <h1>🃏 Memory Game - Find the Pairs 🃏</h1>
+  <p *ngIf="gameWon" class="win-message">🎉 You won! Congratulations! 🎉</p>
+
+  <div class="grid mt-3">
+    <div *ngFor="let card of cards" class="card"
+         [class.flipped]="card.isFlipped || card.isMatched"
+         (click)="flipCard(card)">
+      <div class="front">?</div>
+      <div class="back">{{ card.value }}</div>
+    </div>
+  </div>
+  <div class="mt-2">
+    <button class="btn btn-primary mt-3" (click)="initializeGame()">New Game</button>
+  </div>
+  <canvas #fireworksCanvas class="fireworks"></canvas>
+</div>

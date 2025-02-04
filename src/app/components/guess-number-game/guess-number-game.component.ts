@@ -68,4 +68,6 @@ export class GuessNumberGameComponent implements OnInit, AfterViewInit {
     this.numeroInserito?.setValue(undefined);
     this.numeroSegreto = Math.floor(Math.random() * 100) + 1;
   }
+
+  
 }

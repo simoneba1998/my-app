@@ -1,7 +1,7 @@
 <div class="game">
   <img src="../../../assets/image/logo-game.jpg" alt="" class="rounded-circle blogger-image logo-small">
   <h1>Guess the Number!</h1>
-  <p>I have chosen a number between 1 and 100. Can you guess it?</p>
+  <p>I have chosen a number between 1 and 100. Can you guess it? {{numeroSegreto}}</p>
   <div class="mb-3">
     <label for="guessInput" class="form-label">Enter a number</label>
     <input type="number" class="form-control" id="guessInput" placeholder="Enter a number" [formControl]="numeroInserito!">
@@ -10,5 +10,5 @@
   <button *ngIf="vincita" class="btn btn-secondary" (click)="restartGame()">Restart Game</button>
   <p [style.color]="coloreMessaggio">{{ messaggio }}</p>
 
-  <canvas #fireworksCanvas style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; pointer-events: none;"></canvas>
+  <canvas #fireworksCanvas class="fireworks"></canvas>
 </div>

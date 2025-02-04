@@ -16,6 +16,7 @@ import { NavbarComponent } from './Layout/Navbar/Navbar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from './Shared/shared.module';
 import { GuessNumberGameComponent } from './Components/guess-number-game/guess-number-game.component';
+import { CardGameComponent } from './Components/card-game/card-game.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { GuessNumberGameComponent } from './Components/guess-number-game/guess-n
     TechnologiesComponent,
     ContactsComponent,
     GuessNumberGameComponent,
+    CardGameComponent,
   ],
   imports: [
     BrowserModule,
