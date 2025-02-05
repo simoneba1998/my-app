@@ -24,6 +24,12 @@
   font-size: 26px;
 }
 
+.text-linkedin{
+  color: whitesmoke;
+  animation: bounceInLeft 2s;
+  font-size: 28px;
+}
+
 
 @keyframes rotateIn {
   0% {
