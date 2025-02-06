@@ -18,6 +18,7 @@ import { SharedModule } from './Shared/shared.module';
 import { GuessNumberGameComponent } from './Components/guess-number-game/guess-number-game.component';
 import { CardGameComponent } from './Components/card-game/card-game.component';
 import { GameComponent } from './Pages/Game/game.component';
+import { SetteMezzoComponent } from './Components/sette-mezzo/sette-mezzo.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { GameComponent } from './Pages/Game/game.component';
     GuessNumberGameComponent,
     CardGameComponent,
     GameComponent,
+    SetteMezzoComponent,
   ],
   imports: [
     BrowserModule,

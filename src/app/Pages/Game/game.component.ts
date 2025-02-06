@@ -14,7 +14,7 @@ import Fireworks from 'fireworks-js';
 })
 export class GameComponent implements OnInit, AfterViewInit {
   @ViewChild('fireworksCanvas', { static: false }) fireworksCanvas?: ElementRef;
-  // currentComponent: string = 'component-one';
+  currentComponent: string = 'component-one';
 
   private fireworks?: Fireworks;
 
@@ -42,17 +42,17 @@ export class GameComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // switchComponent(direction: string) {
-  //   if (direction === 'next') {
-  //     this.currentComponent =
-  //       this.currentComponent === 'component-one'
-  //         ? 'component-two'
-  //         : 'component-one';
-  //   } else {
-  //     this.currentComponent =
-  //       this.currentComponent === 'component-one'
-  //         ? 'component-two'
-  //         : 'component-one';
-  //   }
-  // }
+  switchComponent(direction: string) {
+    if (direction === 'next') {
+      this.currentComponent =
+        this.currentComponent === 'component-one'
+          ? 'component-two'
+          : 'component-one';
+    } else {
+      this.currentComponent =
+        this.currentComponent === 'component-one'
+          ? 'component-two'
+          : 'component-one';
+    }
+  }
 }

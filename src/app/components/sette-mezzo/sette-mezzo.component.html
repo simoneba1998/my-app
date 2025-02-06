@@ -1,0 +1,34 @@
+<div class="game-container">
+  <h1 class="game-title">🎴 Sette e Mezzo</h1>
+
+  <!-- Sezione Giocatore -->
+  <div class="player-section">
+    <h2 class="section-title">Your Cards ({{ playerScore }})</h2>
+    <div class="cards">
+      <span *ngFor="let card of playerCards" class="card">{{ card.name }}</span>
+    </div>
+  </div>
+
+  <!-- Sezione Banco (Prima carta coperta con "?") -->
+  <div class="dealer-section">
+    <h2 class="section-title">Dealer's Cards ({{ gameOver ? dealerScore : '?' }})</h2>
+    <div class="cards">
+      <!-- Mostra sempre almeno una carta coperta -->
+      <span class="card">
+        {{ gameOver ? dealerCards[0]?.name : '?' }}
+      </span>
+      <!-- Mostra le altre carte SOLO se il gioco è finito -->
+      <span *ngFor="let card of dealerCards.slice(1)" class="card">{{ gameOver ? card.name : '🂠' }}</span>
+    </div>
+  </div>
+
+  <!-- Messaggio di gioco -->
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <!-- Bottoni -->
+  <div class="btn-group">
+    <button class="btn btn-primary btn-lg" (click)="drawCard('player')" [disabled]="gameOver">🎴 Draw Card</button>
+    <button class="btn btn-warning btn-lg" (click)="stand()" [disabled]="gameOver">🛑 Stand</button>
+    <button class="btn btn-danger btn-lg" (click)="startGame()">🔄 New Game</button>
+  </div>
+</div>

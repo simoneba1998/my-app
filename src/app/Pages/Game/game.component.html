@@ -1,20 +1,17 @@
 <div class="switch-container">
-  <!-- Freccia sinistra -->
-  <!-- <span class="arrow left" (click)="switchComponent('prev')">&#10094;</span> -->
-
-  <!-- Area del componente dinamico -->
-  <!-- <div class="component-wrapper" > -->
-  <!-- <ng-container *ngIf="currentComponent === 'component-one'"> -->
+   <!-- Freccia sinistra -->
+   <span class="arrow left" (click)="switchComponent('prev')" *ngIf="currentComponent === 'component-two'">&#10094;</span>
+   <!-- Area del componente dinamico -->
+   <div class="component-wrapper" >
+   <ng-container *ngIf="currentComponent === 'component-one'">
     <app-card-game (fireworks)="onChangeFireworks($event)"></app-card-game>
-  <!-- </ng-container> -->
-  <!--
+   </ng-container>
     <ng-container *ngIf="currentComponent === 'component-two'">
-      <app-guess-number-game></app-guess-number-game>
-    </ng-container> -->
-  <!-- </div> -->
-  <!-- Freccia destra -->
-  <!-- <span class="arrow right" (click)="switchComponent('next')">&#10095;</span> -->
+   <app-sette-mezzo></app-sette-mezzo>
+    </ng-container>
+   </div>
+   <!-- Freccia destra -->
+   <span class="arrow right" (click)="switchComponent('next')" *ngIf="currentComponent === 'component-one'">&#10095;</span>
   <canvas #fireworksCanvas class="fireworks"></canvas>
 </div>
 
-<!-- Scommentare commenti per avere i due giochi con la scelta -->
