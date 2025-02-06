@@ -1,3 +1,4 @@
+/* Stili base per il container principale */
 .switch-container {
   display: flex;
   align-items: center;
@@ -8,6 +9,7 @@
   box-sizing: border-box;
 }
 
+/* Stili base per le frecce */
 .arrow {
   font-size: 40px;
   cursor: pointer;
@@ -30,6 +32,7 @@
   opacity: 0.8;
 }
 
+/* Stile per il contenitore del componente dinamico */
 .component-wrapper {
   width: 650px;
   height: 650px;
@@ -41,7 +44,7 @@
   padding-top: 10%;
 }
 
-/* Animazione keyframes per effetto pulse */
+/* Keyframes per l'effetto pulse */
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
@@ -51,26 +54,7 @@
   }
 }
 
-/* Media Query per dispositivi mobili */
-@media (max-width: 600px) {
-  .switch-container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .arrow {
-    font-size: 30px;
-    margin: 10px 0;
-  }
-
-  .component-wrapper {
-    width: 90%;
-    height: auto;
-    min-height: 150px;
-    margin: 10px 0;
-  }
-}
-
+/* Stile per il canvas dei fireworks */
 .fireworks {
   position: fixed;
   top: 0;
@@ -79,4 +63,66 @@
   height: 100%;
   z-index: 1000;
   pointer-events: none;
+}
+
+/* Stile per l'indicazione swipe (stile iPhone) */
+.swipe-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 20px;
+  opacity: 0;
+  animation: fadeInOut 3s infinite;
+}
+
+/* Animazione per far comparire e scomparire la scritta */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Media Query per dispositivi mobili (max-width: 480px) */
+@media (max-width: 480px) {
+  .switch-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  /* Nascondi le frecce sui dispositivi mobili */
+  .arrow {
+    display: none;
+  }
+
+  /* Adatta il contenitore del componente per schermi piccoli */
+  .component-wrapper {
+    width: 90%;
+    height: auto;
+    min-height: 150px;
+    margin: 10px 0;
+    padding-top: 10%;
+  }
+
+  /* Mostra l'indicazione swipe */
+  .swipe-indicator {
+    display: block;
+  }
+}
+
+/* Se vuoi nascondere l'indicazione swipe sui dispositivi non mobili,
+   puoi aggiungere anche una regola globale che la nasconde di default */
+@media (min-width: 481px) {
+  .swipe-indicator {
+    display: none;
+  }
 }
