@@ -1,17 +1,32 @@
-<div class="switch-container">
-   <!-- Freccia sinistra -->
-   <span class="arrow left" (click)="switchComponent('prev')" *ngIf="currentComponent === 'component-two'">&#10094;</span>
-   <!-- Area del componente dinamico -->
-   <div class="component-wrapper" >
-   <ng-container *ngIf="currentComponent === 'component-one'">
-    <app-card-game (fireworks)="onChangeFireworks($event)"></app-card-game>
-   </ng-container>
-    <ng-container *ngIf="currentComponent === 'component-two'">
-   <app-sette-mezzo></app-sette-mezzo>
+<div class="switch-container"
+     (swipeleft)="onSwipeLeft()"
+     (swiperight)="onSwipeRight()">
+
+  <!-- Indicazione per lo swipe (visibile su mobile) -->
+  <div class="swipe-indicator mb-5">
+    Swipe to change game >>>
+  </div>
+
+  <!-- Freccia sinistra (visibile solo se currentComponent è 'component-two' e su schermi > 480px) -->
+  <span class="arrow left" (click)="switchComponent('prev')" *ngIf="currentComponent === 'component-two'">
+    &#10094;
+  </span>
+
+  <!-- Contenitore del componente dinamico -->
+  <div class="component-wrapper">
+    <ng-container *ngIf="currentComponent === 'component-one'">
+      <app-card-game (fireworks)="onChangeFireworks($event)"></app-card-game>
     </ng-container>
-   </div>
-   <!-- Freccia destra -->
-   <span class="arrow right" (click)="switchComponent('next')" *ngIf="currentComponent === 'component-one'">&#10095;</span>
+    <ng-container *ngIf="currentComponent === 'component-two'">
+      <app-sette-mezzo></app-sette-mezzo>
+    </ng-container>
+  </div>
+
+  <!-- Freccia destra (visibile solo se currentComponent è 'component-one' e su schermi > 480px) -->
+  <span class="arrow right" (click)="switchComponent('next')" *ngIf="currentComponent === 'component-one'">
+    &#10095;
+  </span>
+
+  <!-- Canvas per i fireworks -->
   <canvas #fireworksCanvas class="fireworks"></canvas>
 </div>
-

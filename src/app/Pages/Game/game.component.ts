@@ -20,6 +20,8 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
+  ngOnInit(): void {}
+
   ngAfterViewInit(): void {
     if (this.fireworksCanvas) {
       this.fireworks = new Fireworks(this.fireworksCanvas.nativeElement, {
@@ -29,30 +31,33 @@ export class GameComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnInit(): void {}
-
+  // Metodo per gestire l'attivazione dei fireworks
   onChangeFireworks(status: string) {
-    if (status == 'start') {
-        this.fireworks?.start();
-        setTimeout(() => {
-          this.fireworks?.stop();
-        }, 5000);
-    } else if (status == 'stop') {
+    if (status === 'start') {
+      this.fireworks?.start();
+      setTimeout(() => {
+        this.fireworks?.stop();
+      }, 5000);
+    } else if (status === 'stop') {
       this.fireworks?.stop();
     }
   }
 
+  // Metodo per cambiare componente. Puoi differenziare la logica in base alla direzione se necessario.
   switchComponent(direction: string) {
-    if (direction === 'next') {
-      this.currentComponent =
-        this.currentComponent === 'component-one'
-          ? 'component-two'
-          : 'component-one';
-    } else {
-      this.currentComponent =
-        this.currentComponent === 'component-one'
-          ? 'component-two'
-          : 'component-one';
-    }
+    this.currentComponent =
+      this.currentComponent === 'component-one'
+        ? 'component-two'
+        : 'component-one';
+  }
+
+  // Metodo chiamato sullo swipe verso sinistra (corrisponde al "next")
+  onSwipeLeft() {
+    this.switchComponent('next');
+  }
+
+  // Metodo chiamato sullo swipe verso destra (corrisponde al "prev")
+  onSwipeRight() {
+    this.switchComponent('prev');
   }
 }

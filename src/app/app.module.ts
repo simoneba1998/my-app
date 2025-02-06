@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,13 +12,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input'; // Importa il modulo per gli input
 import { MatButtonModule } from '@angular/material/button'; // Importa il modulo per i pulsanti
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { NavbarComponent } from './Layout/Navbar/Navbar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from './Shared/shared.module';
 import { GuessNumberGameComponent } from './Components/guess-number-game/guess-number-game.component';
 import { CardGameComponent } from './Components/card-game/card-game.component';
 import { GameComponent } from './Pages/Game/game.component';
 import { SetteMezzoComponent } from './Components/sette-mezzo/sette-mezzo.component';
+import { NavbarComponent } from './Layout/Navbar/Navbar.component';
 
 
 @NgModule({
@@ -43,7 +43,8 @@ import { SetteMezzoComponent } from './Components/sette-mezzo/sette-mezzo.compon
     MatButtonModule,
     MatFormFieldModule,
     MatTooltipModule,
-    SharedModule
+    SharedModule,
+    HammerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
