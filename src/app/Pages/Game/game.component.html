@@ -18,7 +18,7 @@
       <app-card-game (fireworks)="onChangeFireworks($event)"></app-card-game>
     </ng-container>
     <ng-container *ngIf="currentComponent === 'component-two'">
-      <app-sette-mezzo></app-sette-mezzo>
+      <app-sette-mezzo (fireworks)="onChangeFireworks($event)"></app-sette-mezzo>
     </ng-container>
   </div>
 

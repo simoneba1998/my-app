@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 interface Card {
   name: string;
@@ -11,6 +11,7 @@ interface Card {
   styleUrls: ['./sette-mezzo.component.css']
 })
 export class SetteMezzoComponent implements OnInit {
+  @Output() fireworks: EventEmitter<string> = new EventEmitter<string>();
   deck: Card[] = [];
   playerCards: Card[] = [];
   dealerCards: Card[] = [];
@@ -24,6 +25,7 @@ export class SetteMezzoComponent implements OnInit {
   }
 
   startGame() {
+    this.fireworks.emit('stop');
     this.gameOver = false;
     this.message = '';
     this.deck = this.createDeck();
@@ -82,10 +84,12 @@ export class SetteMezzoComponent implements OnInit {
 
     if (this.dealerScore > 7.5) {
       this.message = '🎉 Dealer went over 7.5! You win!';
+      this.fireworks.emit('start');
     } else if (this.dealerScore >= this.playerScore) {
       this.message = '❌ Dealer wins!';
     } else {
       this.message = '🎉 You win!';
+      this.fireworks.emit('start');
     }
 
     this.gameOver = true;
