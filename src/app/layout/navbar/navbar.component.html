@@ -1,5 +1,6 @@
 <nav>
-  <div class="menu-toggle" (click)="toggleMenu()">☰</div>
+  <div class="menu-toggle" (click)="toggleMenu()" *ngIf="!isMenuOpen">☰</div>
+  <div class="menu-toggle" (click)="toggleMenu()" *ngIf="isMenuOpen">✖</div>
   <ul class="list" [class.active]="isMenuOpen" style="font-size: 20px;">
     <li><a routerLink="/" class="link"> Home</a></li>
     <li><a routerLink="/aboutMe" class="link" routerLinkActive="active"> About Me</a></li>

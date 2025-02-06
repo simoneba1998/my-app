@@ -54,7 +54,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/my-app/" 
+              "baseHref": "/my-app/"
             },
             "development": {
               "buildOptimizer": false,
@@ -62,7 +62,8 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "baseHref": "/"
             }
           },
           "defaultConfiguration": "production"
