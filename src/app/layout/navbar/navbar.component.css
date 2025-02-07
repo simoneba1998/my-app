@@ -32,7 +32,7 @@ body {
 
 .link::before,
 .link::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   width: 100%;
@@ -78,6 +78,7 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+
   .list {
     display: none;
     flex-direction: column;
@@ -100,4 +101,3 @@ body {
     z-index: 1100; /* Assicura che l'icona del menu sia sopra tutto */
   }
 }
-

@@ -57,3 +57,10 @@ main.content {
     grid-template-columns: 1fr; /* Una colonna per schermi piccoli */
   }
 }
+
+@media (max-width: 480px) {
+main.content{
+  padding-top: 0px;
+}
+}
+
