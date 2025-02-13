@@ -27,8 +27,10 @@
 
   <!-- Bottoni -->
   <div class="btn-group">
+    <my-button></my-button>
     <button class="btn btn-primary btn-lg" (click)="drawCard('player')" [disabled]="gameOver">🎴 Draw Card</button>
     <button class="btn btn-warning btn-lg" (click)="stand()" [disabled]="gameOver">🛑 Stand</button>
     <button class="btn btn-danger btn-lg" (click)="startGame()">🔄 New Game</button>
   </div>
 </div>
+
